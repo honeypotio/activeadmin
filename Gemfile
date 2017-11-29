@@ -1,12 +1,5 @@
 source 'https://rubygems.org'
 
-# Trick to use https without warnings and without having to specify full URLs
-# TODO: Can be removed when Bundler 2.x is released.
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
 # Optional dependencies
 gem 'cancan'
 gem 'pundit'
@@ -54,5 +47,6 @@ group :test do
   gem 'i18n-spec'
   gem 'shoulda-matchers', '<= 2.8.0'
   gem 'sqlite3', platforms: :mri
-  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
